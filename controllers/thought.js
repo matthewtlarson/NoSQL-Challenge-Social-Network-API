@@ -8,7 +8,7 @@ module.exports={
       .catch((err) => res.status(500).json(err));
   },
 
-  getUserById(req, res) {
+  getThoughtById(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
       .select('-__v')
       .then((user) =>
@@ -19,13 +19,13 @@ module.exports={
       .catch((err) => res.status(500).json(err));
   },
   // create a new user
-  createUser(req, res) {
+  createThought(req, res) {
     Thought.create(req.body)
       .then((user) => res.json(user))
       .catch((err) => res.status(500).json(err));
   },
 
-  deleteUser(req, res) {
+  deleteThought(req, res) {
     Thought.findOneAndDelete({ _id: req.params.thoughtId })
       .then((user) =>
         !user
@@ -36,7 +36,7 @@ module.exports={
       .catch((err) => res.status(500).json(err));
   },
 
-  updateUser(req, res) {
+  updateThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
       { $set: req.body },
