@@ -1,5 +1,4 @@
 const { User, Thought } = require('../models');
-const router = require('express').Router();
 
 module.exports={
   allUsers(req, res){
