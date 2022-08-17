@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const { 
-
+  
 } = require("../controllers/user");
 
 router.route('/thoughts').get().post();
