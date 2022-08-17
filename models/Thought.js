@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const reactionSchema = require('./Reaction');
 
 const thoughtSchema = new mongoose.Schema({
   thoughtText: {
@@ -15,9 +16,7 @@ const thoughtSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  reactions: {
-//not done
-  }
+  reactions: [reactionSchema]
 },
 {
   // Mongoose supports two Schema options to transform Objects after querying MongoDb: toJSON and toObject.
